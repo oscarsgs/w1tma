@@ -2,7 +2,7 @@
 // Code to detect whether index.php has been requested without query string goes here
 // If no parameter detected...
 if (!isset($_GET['page'])) {
-    $id = '404'; // display home page
+    $id = 'home'; // display home page
 } else {
     $id = $_GET['page']; // else requested page
 }
@@ -29,7 +29,7 @@ $footer_template = "templates/footer.html";
 
 $header = file_get_contents($header_template);
 $footer = file_get_contents($footer_template);
-
+ 
 echo $header;
 echo $footer;
 
