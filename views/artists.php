@@ -7,9 +7,9 @@
 
 
 	$artist_table = "";
-	$artists = addArtists();
+	$artists = addArtists($config);
 	foreach ($artists as $artist) {
-		addSongsFromDB($artist);
+		$artist->addSongsFromDB($config);
 		$template = file_get_contents($artist_content);
 		$artist_name = str_replace('%%-artist_name-%%', $artist->getName(), $template);
 		$artist_songs = str_replace('%%-artist_songs-%%', $artist->getSongCount(), $template);
