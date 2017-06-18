@@ -21,6 +21,7 @@
 				$t = $row['title'];
 				$d = $row['duration'];
 				$this->addSong($t,$d);
+				echo $row['title'];
 			}
 			$db->close();
 		}
