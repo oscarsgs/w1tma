@@ -11,6 +11,7 @@ function addArtists($c){
 			$i = $row['id'];
 			$n = $row['name'];
 			$artists[] = new Artist($i,$n);
+			echo $artists[]->getName();
 		}
 		$db->close();
 		return $artists;
