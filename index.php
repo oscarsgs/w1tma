@@ -7,12 +7,12 @@ if (!isset($_GET['page'])) {
     $id = $_GET['page']; // else requested page
 }
 
-include 'includes/summary.php';
+
 $page = "";
 $content = "";
 $page_title = "W1 Music";
 $summary = "";
-
+include 'includes/summary.php';
 // Switch statement to decide content of page will go here.
 // Regardless of which "view" is displayed, the variable $content will contain the right content
 switch ($id) {

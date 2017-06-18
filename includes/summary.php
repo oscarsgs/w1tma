@@ -12,7 +12,7 @@
 	$sql = "SELECT count(distinct artist_id)from artist a join song s on (a.id = s.artist_id)";
 	$query = $db->query($sql);
 	if ($row = $query->fetch_assoc()) {
-    	$summary .= str_replace('%%-total_artists-%%', $row['count(*)'], $songs);
+    	$summary .= str_replace('%%-total_artists-%%', $row['count(distinct artist_id)'], $songs);
 	}
 	
 
