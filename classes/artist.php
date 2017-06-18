@@ -18,8 +18,8 @@
 			$sql = "SELECT s.title title, s.duration duration from artist a join song s on (a.id = s.artist_id) where a.id=$this->id order by a.name asc, s.title asc";
 			$query = $db->query($sql);
 			while($row = $query->fetch_array()){
-				$t = $row['title'] = $t;
-				$t = $row['duration'] = $d;
+				$t = $row['title'];
+				$d = $row['duration'];
 				$this->addSong($t,$d);
 			}
 			$db->close();
