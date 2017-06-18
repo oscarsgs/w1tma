@@ -1,7 +1,5 @@
 <?php 
 	require_once 'includes/functions.php';
-	require_once 'includes/config.php';
-	require_once 'classes/db.php';
 	$artist_head = "templates/content-header-artists.html";
 	$artist_content = "templates/content-artists.html";
 	$artist_foot = "templates/content-footer-artists.html";
@@ -10,7 +8,7 @@
 	$artist_table = "";
 	$artists = addArtists();
 	foreach ($artists as $artist) {
-		$artist->addSongsFromDB();
+		addSongsFromDB($artist);
 		$template = file_get_contents($artist_content);
 		$artist_name = str_replace('%%-artist_name-%%', $artist->getName(), $template);
 		$artist_songs = str_replace('%%-artist_songs-%%', $artist->getSongCount(), $template);

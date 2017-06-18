@@ -16,4 +16,17 @@ function addArtists(){
 		return $artists;
 }
 
+function addSongsFromDB($a){
+	$db = new DB($config['db_host'], $config['db_user'], $config['db_pass'], $config['db_name']);
+	$sql = "SELECT s.title title, s.duration duration from artist a join song s on (a.id = s.artist_id) where a.id=$a->getId() order by a.name asc, s.title asc";
+	$query = $db->query($sql);
+	while($row = $query->fetch_array()){
+		$t = $row['title'] = $t;
+		$t = $row['duration'] = $d;
+		$a->addSong($t,$d);
+	}
+	$db->close();
+}
+
+
  ?>

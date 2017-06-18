@@ -13,18 +13,6 @@
 			$this->id = $i;
 		}
 
-		public function addSongsFromDB(){
-			$db = new DB($config['db_host'], $config['db_user'], $config['db_pass'], $config['db_name']);
-			$sql = "SELECT s.title title, s.duration duration from artist a join song s on (a.id = s.artist_id) where a.id=$this->id order by a.name asc, s.title asc";
-			$query = $db->query($sql);
-			while($row = $query->fetch_array()){
-				$t = $row['title'] = $t;
-				$t = $row['duration'] = $d;
-				$this->addSong($t,$d);
-			}
-			$db->close();
-		}
-
 		public function getName(){
 			return $this->name;
 		}
