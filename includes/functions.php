@@ -10,8 +10,8 @@ function addArtists($c){
 		while($row = $query->fetch_array()){
 			$i = $row['id'];
 			$n = $row['name'];
+			echo $row['name'];
 			$artists[] = new Artist($i,$n);
-			echo $artists[]->getName();
 		}
 		$db->close();
 		return $artists;
