@@ -1,5 +1,5 @@
 <?php 
-require_once 'includes/config.php';
+require_once 'config.php';
 require_once 'classes/db.php';
 require_once 'classes/artist.php';
 function addArtists(){
