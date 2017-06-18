@@ -42,7 +42,7 @@
 		}
 
 		public function addSong($t,$d){
-			echo "Enters<br/>"
+			echo "Enters<br/>";
 			$songs[] = new Song($t,$d);
 		}
 
