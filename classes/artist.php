@@ -1,10 +1,27 @@
 <?php 
+	require_once 'song.php';
+	require_once 'includes/config.php';
+	require_once 'classes/db.php';
 	class Artist{
 		private $name;
+		private $id;
 		private $songs = array();
-		
-		public function __construct($n){
+
+		public function __construct($i,$n){
 			$this->name = $n;
+			$this->id = $i;
+		}
+
+		public function addSongsFromDB(){
+			$db = new DB($config['db_host'], $config['db_user'], $config['db_pass'], $config['db_name']);
+			$sql = "SELECT s.title title, s.duration duration from artist a join song s on (a.id = s.artist_id) where a.id=$this->id order by a.name asc, s.title asc";
+			$query = $db->query($sql);
+			while($row = $query->fetch_array()){
+				$t = $row['title'] = $t;
+				$t = $row['duration'] = $d;
+				$this->addSong($t,$d);
+			}
+			$db->close();
 		}
 
 		public function getName(){
@@ -13,6 +30,26 @@
 
 		public function setName($n){
 			$this->name = $n;
+		}
+
+		public function getId(){
+			return $this->name;
+		}
+
+		public function setId($i){
+			$this->id = $i;
+		}
+
+		public function addSong($t,$a,$d){
+			$songs[] = new Song($t,$a,$d);
+		}
+
+		public function getSongs(){
+			return $this->songs;
+		}
+
+		public function getSongCount(){
+			return count($this->songs);
 		}
 	}
  ?>

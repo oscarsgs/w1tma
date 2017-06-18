@@ -1,13 +1,10 @@
 <?php 
-	require_once 'artist.php';
 	class Song{
 		private $title;
-		private $aritst;
 		private $duration;
 
-		public function __construct($t,$a,$d){
+		public function __construct($t,$d){
 			$this->title = $t;
-			$this->artist = new Artist($a);
 			$this->duration = $d; 
 		}
 
@@ -17,14 +14,6 @@
 
 		public function setTitle($t){
 			$this->title = $t;
-		}
-
-		public function getArtist(){
-			return $this->artist->getName();
-		}
-
-		public function setArtist($a){
-			$this->artist->setName($a);
 		}
 
 		public function getDuration(){
