@@ -5,7 +5,6 @@
 	$artist_content = "templates/content-artists.html";
 	$artist_foot = "templates/content-footer-artists.html";
 
-
 	$artist_table = "";
 	$artists = addArtists($config);
 	foreach ($artists as $artist) {
@@ -17,6 +16,8 @@
 			$artist_table .= $artist_songs;
 		}
 	}
+
+
 	$content .= file_get_contents($artist_head);
 	$content .= $artist_table;
 	$content .= file_get_contents($artist_foot);
