@@ -92,13 +92,11 @@ aside table tr td:last-child{
 }
 
 footer{
-	position: absolute;
 	right: 0;
  	bottom: 0;
  	left: 0;
- 	padding: 1rem;
+ 	padding: 1em;
  	font-size: 0.85em;
- 	background-color: #eee;
  	text-align: center;
 }
 
