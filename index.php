@@ -41,6 +41,6 @@ $page .= $content;
 $page .= $summary;
 $page .= $footer;
 
-echo $content;
+echo $page;
 
  ?>
