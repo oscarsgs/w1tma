@@ -17,9 +17,8 @@
 		}
 
 		public function getDuration(){
-			$min = floor($this->duration/60);
-			$sec = $this->duration % 60;
-			$dur = $min . ":" . $sec;
+			date_default_timezone_set("GMT");
+			$dur = date('i:s',$this->duration);
 			return $dur;
 		}
 
