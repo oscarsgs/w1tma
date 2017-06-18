@@ -7,10 +7,11 @@ if (!isset($_GET['page'])) {
     $id = $_GET['page']; // else requested page
 }
 
+$page = "";
 $content = "";
 
 // Switch statement to decide content of page will go here.
-// Regardless of which "view" is displayed, the variable $content will
+// Regardless of which "view" is displayed, the variable $content will contain the right content
 switch ($id) {
     case 'home' :
         include 'views/home.php';
@@ -27,20 +28,18 @@ switch ($id) {
 }
 
 $header_template = "templates/header.html";
-$content_template = "templates/content-" . $id . ".html";
 $aside_template = "templates/aside-summary.html";
 $footer_template = "templates/footer.html";
 
 $header = file_get_contents($header_template);
-$page_content = file_get_contents($content_template);
 $summary = file_get_contents($aside_template);
 $footer = file_get_contents($footer_template);
 
  
-$content .= $header;
-$content .= $page_content; 
-$content .= $summary;
-$content .= $footer;
+$page .= $header;
+$page .= $content;
+$page .= $summary;
+$page .= $footer;
 
 echo $content;
 
