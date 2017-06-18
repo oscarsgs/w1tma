@@ -59,7 +59,7 @@ article table{
 
 article table tr td{
 	border: 1px solid #2f6f6f;
-	padding:0.25em;
+	padding:0.25em 0.75em;
 	text-align: left;
 }
 
