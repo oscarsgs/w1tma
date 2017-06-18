@@ -9,7 +9,7 @@
 	$songs = str_replace('%%-total_songs-%%', $query, $template);
 	$sql = "SELECT a.count(*) from artist a join song s on (a.id = s.artist_id)";
 	$query = $db->query($sql);
-	$summary .= str_replace('%%-total_artists-%%, replace, subject)
+	$summary .= str_replace('%%-total_artists-%%', $query, $songs);
 
 
  ?>
