@@ -9,6 +9,7 @@ if (!isset($_GET['page'])) {
 
 $page = "";
 $content = "";
+$page_title = "W1 Music";
 
 // Switch statement to decide content of page will go here.
 // Regardless of which "view" is displayed, the variable $content will contain the right content
