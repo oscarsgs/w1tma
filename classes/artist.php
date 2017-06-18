@@ -1,7 +1,8 @@
 <?php 
 	class Artist{
 		private $name;
-
+		private $songs = array();
+		
 		public function __construct($n){
 			$this->name = $n;
 		}
