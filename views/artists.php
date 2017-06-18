@@ -10,10 +10,12 @@
 	$artists = addArtists($config);
 	foreach ($artists as $artist) {
 		$artist->addSongsFromDB($config);
-		$template = file_get_contents($artist_content);
-		$artist_name = str_replace('%%-artist_name-%%', $artist->getName(), $template);
-		$artist_songs = str_replace('%%-artist_songs-%%', $artist->getSongCount(), $template);
-		$artist_table .= $artist_songs;
+		if($artist->getSongCount()>0){
+			$template = file_get_contents($artist_content);
+			$artist_name = str_replace('%%-artist_name-%%', $artist->getName(), $template);
+			$artist_songs = str_replace('%%-artist_songs-%%', $artist->getSongCount(), $template);
+			$artist_table .= $artist_songs;
+		}
 	}
 
 
