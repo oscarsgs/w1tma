@@ -83,7 +83,7 @@ aside table{
 
 aside table tr td{
 	padding:0.25em;
-	border:0!important;
+	border:0;
 }
 
 aside table tr td:last-child{
