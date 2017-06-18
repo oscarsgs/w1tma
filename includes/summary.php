@@ -7,12 +7,12 @@
 	$sql = "SELECT count(*) from song";
 	$query = $db->query($sql);
 	if ($row = $query->fetch_assoc()) {
-    	$songs = str_replace('%%-total_songs-%%', $row, $template);
+    	$songs = str_replace('%%-total_songs-%%', $row['count(*)'], $template);
 	}
 	$sql = "SELECT a.count(*) from artist a join song s on (a.id = s.artist_id)";
 	$query = $db->query($sql);
 	if ($row = $query->fetch_assoc()) {
-    	$summary .= str_replace('%%-total_artists-%%', $row, $songs);
+    	$summary .= str_replace('%%-total_artists-%%', $row['count(*)'], $songs);
 	}
 	
 
