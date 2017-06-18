@@ -10,6 +10,7 @@ if (!isset($_GET['page'])) {
 $page = "";
 $content = "";
 $page_title = "W1 Music";
+$summary = "";
 
 // Switch statement to decide content of page will go here.
 // Regardless of which "view" is displayed, the variable $content will contain the right content
@@ -37,7 +38,7 @@ $summary = file_get_contents($aside_template);
 $footer = file_get_contents($footer_template);
 
  
-$page .= $header;
+$page .= str_replace('%%-title-%%', $page_title, $header);
 $page .= $content;
 $page .= $summary;
 $page .= $footer;
