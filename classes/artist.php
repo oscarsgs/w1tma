@@ -1,7 +1,9 @@
 <?php 
 	require_once 'song.php';
 	require_once 'includes/config.php';
-	require_once 'classes/db.php';
+	require_once 'db.php';
+	
+
 	class Artist{
 		private $name;
 		private $id;

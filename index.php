@@ -1,6 +1,8 @@
 <?php 
 // Code to detect whether index.php has been requested without query string goes here
 // If no parameter detected...
+require_once 'includes/config.php';
+
 if (!isset($_GET['page'])) {
     $id = 'home'; // display home page
 } else {
