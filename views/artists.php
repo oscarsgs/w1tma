@@ -11,6 +11,7 @@
 	foreach ($artists as $artist) {
 		$artist->addSongsFromDB($config);
 		$template = file_get_contents($artist_content);
+		echo $artist->getSongCount() . "</br>";
 		if($artist->getSongCount()>0){
 			$artist_name = str_replace('%%-artist_name-%%', $artist->getName(), $template);
 			$artist_songs = str_replace('%%-artist_songs-%%', $artist->getSongCount(), $artist_name);
