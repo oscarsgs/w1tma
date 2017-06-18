@@ -26,7 +26,7 @@ switch ($id) {
 }
 
 $header_template = "templates/header.html";
-$content_template = "templates/" . $id . ".html";
+$content_template = "templates/content-" . $id . ".html";
 $footer_template = "templates/footer.html";
 
 $header = file_get_contents($header_template);
