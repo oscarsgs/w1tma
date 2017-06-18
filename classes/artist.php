@@ -41,8 +41,8 @@
 			$this->id = $i;
 		}
 
-		public function addSong($t,$a,$d){
-			$songs[] = new Song($t,$a,$d);
+		public function addSong($t,$d){
+			$songs[] = new Song($t,$d);
 		}
 
 		public function getSongs(){
