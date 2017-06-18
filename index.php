@@ -7,6 +7,7 @@ if (!isset($_GET['page'])) {
     $id = $_GET['page']; // else requested page
 }
 
+include 'includes/summary.php';
 $page = "";
 $content = "";
 $page_title = "W1 Music";
@@ -30,11 +31,9 @@ switch ($id) {
 }
 
 $header_template = "templates/header.html";
-$aside_template = "templates/aside-summary.html";
 $footer_template = "templates/footer.html";
 
 $header = file_get_contents($header_template);
-$summary = file_get_contents($aside_template);
 $footer = file_get_contents($footer_template);
 
  

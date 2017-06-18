@@ -1,6 +1,7 @@
 <?php 
 	require 'includes/config.php';
 	require 'classes/db.php';
+	$aside_template = "templates/aside-summary.html";
 	$template = file_get_contents($aside_template);
 	$db = new DB($config['db_host'], $config['db_user'], $config['db_pass'], $config['db_name']);
 	$sql = "SELECT count(*) from song";
