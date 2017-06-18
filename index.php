@@ -22,12 +22,15 @@ switch ($id) {
         break;
     default :
         include 'views/404.php';
+        $id = "404";
 }
 
 $header_template = "templates/header.html";
+$content_template = "templates/" . $id . ".html";
 $footer_template = "templates/footer.html";
 
 $header = file_get_contents($header_template);
+$content = file_get_contents($content_template);
 $footer = file_get_contents($footer_template);
  
 echo $header;
