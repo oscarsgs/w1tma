@@ -8,8 +8,8 @@ function addArtists($c){
 	$sql = "SELECT id, name from artist order by name asc";
 		$query = $db->query($sql);
 		while($row = $query->fetch_array()){
-			$t = $row['id'] = $i;
-			$t = $row['name'] = $n;
+			$i = $row['id'];
+			$n = $row['name'];
 			$artists[] = new Artist($i,$n);
 		}
 		$db->close();
