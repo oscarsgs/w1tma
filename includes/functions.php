@@ -4,7 +4,7 @@ require_once 'classes/db.php';
 require_once 'classes/artist.php';
 function addArtists($c){
 	$artists = array();
-	$db = new DB($c['db_host'], $c['db_user'], $['db_pass'], $c['db_name']);
+	$db = new DB($c['db_host'], $c['db_user'], $c['db_pass'], $c['db_name']);
 	$sql = "SELECT id, name from artist order by name asc";
 		$query = $db->query($sql);
 		while($row = $query->fetch_array()){
