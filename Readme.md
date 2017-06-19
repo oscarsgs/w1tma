@@ -6,6 +6,7 @@ A prototype application using PHP, MySQL and HTML. Created for the first assignm
 
 - Introduction
 - Files
+- Live Version
 
 ## Introduction
 
@@ -20,3 +21,7 @@ A prototype application using PHP, MySQL and HTML. Created for the first assignm
 - `templates/`: Contains the html templates to structure the sites.
 - `views/`: Contains all the different views for the site.
 - `Readme.md`: This file.
+
+## Live Version
+
+A live version of the application is hosted in http://titan.dcs.bbk.ac.uk/~ogarci01/w1tma/index.php
