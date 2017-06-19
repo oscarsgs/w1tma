@@ -1,18 +1,30 @@
 <?php 
-// Code to detect whether index.php has been requested without query string goes here
+/**
+ * index.php file
+ *
+ * Contains the single point of entry for our site
+ *
+ */
+
+//Check if index.php has been requested without query string
 // If no parameter detected...
-
-
 if (!isset($_GET['page'])) {
     $id = 'home'; // display home page
 } else {
     $id = $_GET['page']; // else requested page
 }
-
-
+/**
+ * @var string $page Contains the output of the site
+ */
 $page = "";
+/**
+ * @var strin $content Has the main content of the site, and varies depending on the page 
+ */
 $content = "";
 $page_title = "W1 Music";
+/**
+ * @var $summary Contains the output for the summary of Artists and Songs
+ */
 $summary = "";
 include 'includes/summary.php';
 // Switch statement to decide content of page will go here.
@@ -28,9 +40,11 @@ switch ($id) {
         include 'views/songs.php';
         break;
     default :
+        //Not found 
         include 'views/404.php';
         $id = "404";
 }
+
 
 $header_template = "templates/header.html";
 $footer_template = "templates/footer.html";
@@ -44,6 +58,7 @@ $page .= $content;
 $page .= $summary;
 $page .= $footer;
 
+//Displays the page
 echo $page;
 
  ?>

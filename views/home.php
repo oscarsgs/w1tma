@@ -1,4 +1,11 @@
 <?php 
+/**
+ * home.php file
+ *
+ * Creates the content for the home page
+ *
+ */
+
 	$home_template = "templates/content-home.html";
 	$home_title = "Welcome to W1 Music!";
 	$welcome_message = "Pellentesque auctor convallis tellus a dictum. Fusce felis dolor, cursus a blandit.";
